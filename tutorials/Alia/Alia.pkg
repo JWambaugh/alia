@@ -31,6 +31,12 @@
         <orderedlist>
         <title>Install Alia</title>
        
+       <listitem>
+      <para>
+	    Get the Alia source from the {@link http://github.com/martamius/alia/tree github repository}
+	    
+      </para>
+       </listitem>
        <listitem> 
         <para>
        check out the library into any location you choose. It is best to not put the library itself into your document root. This is for security reasons.
@@ -62,9 +68,6 @@ Alia::loadFront();
 <?php
 //include the Alia library
 require_once '/path/to/alia/lib/Alia.php';
-
-//start the session (required by Alia)
-session_start();
 
 //create a simple button
 $button = new APushButton('hello world!');

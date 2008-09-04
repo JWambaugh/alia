@@ -178,7 +178,6 @@ abstract class AObject
 	
 	function __destruct(){
 		  $this->clear();
-		  echo "object dead!";
 	}
 	
 } // end of AObject
