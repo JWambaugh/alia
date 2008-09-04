@@ -80,7 +80,7 @@ $c=CRUD_CLASS;
 $r=new $c();
 $t=$r->getTable();
 $columns=$t->getColumns();
-
+var_dump($columns);
 //build the widget
 require_once(dirname(__FILE__)."/WidgetGenerator.php");
 require_once(dirname(__FILE__)."/widgets/".WIDGET_GENERATOR.".php");
