@@ -194,17 +194,29 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																																<div class="method-definition">
+																																																																																																																<div class="method-definition">
 					<img src="../../media/images/Constructor.png" alt=" "/>
 											<span class="method-result">AWidget</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
 										()
 									</div>
 																<div class="method-definition">
+					<img src="../../media/images/Destructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
 											<span class="method-result"><a href="../../Alia/Widgets/AWidget.html">AWidget</a></span>
 										<a href="#addAttribute" title="details" class="method-name">addAttribute</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
 									</div>
 																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
@@ -214,13 +226,13 @@
 									</div>
 																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result">array</span>
 										<a href="#getAttributes" title="details" class="method-name">getAttributes</a>
 										()
 									</div>
 																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result"><a href="../../Alia/Core/ALayout.html">ALayout</a>|false</span>
 										<a href="#getLayout" title="details" class="method-name">getLayout</a>
 										()
 									</div>
@@ -232,7 +244,7 @@
 									</div>
 																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#render" title="details" class="method-name">render</a>
 										()
 									</div>
@@ -246,7 +258,7 @@
 					<img src="../../media/images/Method.png" alt=" "/>
 											<span class="method-result"><a href="../../Alia/Widgets/AWidget.html">AWidget</a></span>
 										<a href="#setLayout" title="details" class="method-name">setLayout</a>
-											(<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$layout</span>)
+											(<span class="var-type"><a href="../../Alia/Core/ALayout.html">ALayout</a></span>&nbsp;<span class="var-name">$layout</span>)
 									</div>
 																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
@@ -274,7 +286,7 @@
 		<div class="info-box-body">
 			
 <a name="var$__attributes" id="$__attributes"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<img src="../../media/images/PrivateVariable.png" />
@@ -297,7 +309,7 @@
 
 </div>
 <a name="var$__layout" id="$__layout"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="var-header">
 		<img src="../../media/images/PrivateVariable.png" />
@@ -353,11 +365,11 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 <a name="method__construct" id="__construct"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Constructor.png" />
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a42">42</a></span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a44">44</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -431,16 +443,46 @@
 							</li>
 				</ul>
 	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Destructor.png" />
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a185">185</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Alia/Core/AObject.html#method__destruct">AObject::__destruct()</a></dt>
+					</dl>
+			
+	</div>
 <a name="methodaddAttribute" id="addAttribute"><!-- --></a>
 <div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">addAttribute</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a80">80</a></span>)
+		<span class="method-title">addAttribute</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a90">90</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Enter description here...</p>
+<p class="short-description">Prepares the widget to accept a new attribute</p>
+<p class="description"><p>as of 9/4/2008 accepts an optional parameter to set it to a value at the same time</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -450,13 +492,16 @@
 		<span class="method-name">
 			addAttribute
 		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span> = <span class="var-default">false</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
 				<span class="var-type">string</span>
 				<span class="var-name">$name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span><span class="var-description">: - Optional</span>			</li>
 				</ul>
 		
 			
@@ -469,16 +514,48 @@
 							</li>
 				</ul>
 	</div>
-<a name="methodgetAttribute" id="getAttribute"><!-- --></a>
+<a name="methodclear" id="clear"><!-- --></a>
 <div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">getAttribute</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a91">91</a></span>)
+		<span class="method-title">clear</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a176">176</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Enter description here...</p>
+<p class="short-description">prepares the object to be unset</p>
+<p class="description"><p>attempts to remove all internal references to itself in Alia.  Call this method before calling unset on an object.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../Alia/Core/AObject.html#methodclear">AObject::clear()</a></dt>
+						<dd>Clears all data in the object and attempts to remove all references to itself.</dd>
+					</dl>
+			
+	</div>
+<a name="methodgetAttribute" id="getAttribute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAttribute</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a104">104</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the value of a specified attribute</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -508,20 +585,21 @@
 				</ul>
 	</div>
 <a name="methodgetAttributes" id="getAttributes"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">getAttributes</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a116">116</a></span>)
+		<span class="method-title">getAttributes</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a136">136</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns all attributes of the widget</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">array</span>
 		<span class="method-name">
 			getAttributes
 		</span>
@@ -539,20 +617,21 @@
 				</ul>
 	</div>
 <a name="methodgetLayout" id="getLayout"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">getLayout</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a121">121</a></span>)
+		<span class="method-title">getLayout</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a145">145</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">returns the layout object, if there is one</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result"><a href="../../Alia/Core/ALayout.html">ALayout</a>|false</span>
 		<span class="method-name">
 			getLayout
 		</span>
@@ -570,14 +649,16 @@
 				</ul>
 	</div>
 <a name="methodredraw" id="redraw"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">redraw</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a132">132</a></span>)
+		<span class="method-title">redraw</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a165">165</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">invokes javascript to redraw the widget on the page.</p>
+<p class="description"><p>Call this function to update a widget's display via ajax.</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -601,20 +682,23 @@
 				</ul>
 	</div>
 <a name="methodrender" id="render"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">render</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a66">66</a></span>)
+		<span class="method-title">render</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a74">74</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renders the widget</p>
+<p class="description"><p>The default action is to ask the layout to render it.</p></p>
 	<ul class="tags">
+				<li><span class="field">return:</span> The rendered HTML</li>
 				<li><span class="field">access:</span> public</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			render
 		</span>
@@ -663,15 +747,16 @@
 				</ul>
 	</div>
 <a name="methodsetAttribute" id="setAttribute"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">setAttribute</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a106">106</a></span>)
+		<span class="method-title">setAttribute</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a121">121</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Enter description here...</p>
+<p class="short-description">sets the value of a specified attribute</p>
+<p class="description"><p>you must call addAttribute to add the attribute before you can set it.</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -704,15 +789,15 @@
 				</ul>
 	</div>
 <a name="methodsetLayout" id="setLayout"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">setLayout</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a56">56</a></span>)
+		<span class="method-title">setLayout</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a58">58</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Enter description here...</p>
+<p class="short-description">Sets the layout in charge of rendering the widget</p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -722,12 +807,12 @@
 		<span class="method-name">
 			setLayout
 		</span>
-					(<span class="var-type">unknown_type</span>&nbsp;<span class="var-name">$layout</span>)
+					(<span class="var-type"><a href="../../Alia/Core/ALayout.html">ALayout</a></span>&nbsp;<span class="var-name">$layout</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type">unknown_type</span>
+				<span class="var-type"><a href="../../Alia/Core/ALayout.html">ALayout</a></span>
 				<span class="var-name">$layout</span>			</li>
 				</ul>
 		
@@ -742,14 +827,16 @@
 				</ul>
 	</div>
 <a name="methodsetObjectID" id="setObjectID"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
-		<span class="method-title">setObjectID</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a127">127</a></span>)
+		<span class="method-title">setObjectID</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Widgets_libAWidget.php.html#a155">155</a></span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the object's ID</p>
+<p class="description"><p>This method is automatically called by AObjectRegistry. It should not be used other than that.</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -792,6 +879,8 @@
 													<img src="../../media/images/Method.png" alt=" "/>
 							<span class="method-name"><a href="../../Alia/Core/AObject.html#methodaddConnection">AObject::addConnection()</a></span><br>
 													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Alia/Core/AObject.html#methodclear">AObject::clear()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
 							<span class="method-name"><a href="../../Alia/Core/AObject.html#methodclearConnections">AObject::clearConnections()</a></span><br>
 													<img src="../../media/images/Method.png" alt=" "/>
 							<span class="method-name"><a href="../../Alia/Core/AObject.html#methoddefineSignal">AObject::defineSignal()</a></span><br>
@@ -803,6 +892,8 @@
 							<span class="method-name"><a href="../../Alia/Core/AObject.html#methodhasConnection">AObject::hasConnection()</a></span><br>
 													<img src="../../media/images/Method.png" alt=" "/>
 							<span class="method-name"><a href="../../Alia/Core/AObject.html#methodsetObjectID">AObject::setObjectID()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../Alia/Core/AObject.html#method__destruct">AObject::__destruct()</a></span><br>
 													<img src="../../media/images/PrivateMethod.png" alt=" "/>
 							<span class="method-name"><a href="../../Alia/Core/AObject.html#method__hasSignalDefinition">AObject::__hasSignalDefinition()</a></span><br>
 											</blockquote>
@@ -812,7 +903,7 @@
 
 	
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 03 Sep 2008 15:05:55 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+		Documentation generated on Thu, 04 Sep 2008 12:12:57 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
 </html>

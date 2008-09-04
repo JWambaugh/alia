@@ -39,6 +39,8 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	
 	
 	/*** Methods ***/
+	
+	
 	public function __construct(){
 		$this->addAttribute('id');
 		parent::__construct();
@@ -48,9 +50,9 @@ abstract class AWidget extends AObject implements ARenderableInterface
 
 	
 	/**
-	 * Enter description here...
+	 * Sets the layout in charge of rendering the widget
 	 *
-	 * @param unknown_type $layout
+	 * @param ALayout $layout
 	 * @return AWidget
 	 */
 	public function setLayout( $layout ) {
@@ -62,7 +64,13 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	} // end of member function setLayout
 
 
-
+	/**
+	 * Renders the widget
+	 *
+	 * The default action is to ask the layout to render it.
+	 *
+	 * @return string The rendered HTML
+	 */
 	public function render( ){
 		if($this->__layout){
 			return $this->__layout->render();
@@ -72,18 +80,23 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	}
 
 	/**
-	 * Enter description here...
+	 * Prepares the widget to accept a new attribute
 	 *
+	 * as of 9/4/2008 accepts an optional parameter to set it to a value at the same time
 	 * @param string $name
+	 * @param string $value - Optional
 	 * @return AWidget
 	 */
-	public function addAttribute($name){
+	public function addAttribute($name, $value=false){
 		$this->__attributes[$name]='';
+		if($value !== false){
+			 $this->setAttribute($name,$value);
+		}
 		return $this;
 	}
 	
 	/**
-	 * Enter description here...
+	 * returns the value of a specified attribute
 	 *
 	 * @param string $name
 	 * @return string
@@ -97,7 +110,9 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	
 	
 	/**
-	 * Enter description here...
+	 * sets the value of a specified attribute
+	 *
+	 * you must call addAttribute to add the attribute before you can set it.
 	 *
 	 * @param string $name
 	 * @param string $value
@@ -112,29 +127,52 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	}
 	
 	
-	
+	/**
+	 * Returns all attributes of the widget
+	 *
+	 * @return array
+	 */
+	 
 	public function getAttributes(){
 		return $this->__attributes;
 	}
 	
-	
+	/**
+	 * returns the layout object, if there is one
+	 *
+	 * @return ALayout|false
+	 */
 	public function getLayout(){
 		return $this->__layout;
 		
 	}
 	
-	
+	/**
+	 * Sets the object's ID
+	 *
+	 * This method is automatically called by AObjectRegistry. It should not be used other than that.
+	 */
 	public function setObjectID($id){
 		parent::setObjectID($id);
 		$this->setAttribute('id',$id);
 	}
 
+	 /**
+	  * invokes javascript to redraw the widget on the page.
+	  *
+	  * Call this function to update a widget's display via ajax.
+	  */
 	public function redraw(){
 		$script =AJScript::updateDiv($this->getAttribute('id'),$this->render());
 		AJScriptBuffer::instance()->addJScript("Validator.clear();\n".$script,true);
 	}
 
-
+	 /**
+	  * prepares the object to be unset
+	  *
+	  * attempts to remove all internal references to itself in Alia.
+	  * Call this method before calling unset on an object.
+	  */
 	public function clear(){
 		  if($layout=$this->getLayout()){
 			   $layout->clear();

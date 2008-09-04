@@ -174,14 +174,32 @@
 <li><div class="src-line"><a name="a161"></a>&nbsp;</div></li>
 <li><div class="src-line"><a name="a162"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../Alia/Core/AObject.html#methodclearConnections">clearConnections</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
 <li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../Alia/Core/AConnectionRegistry.html">AConnectionRegistry</a></span><span class="src-sym">::</span><a href="../Alia/Core/AConnectionRegistry.html#methodinstance">instance</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">clearConnections</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
-<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#var$__connections">__connections</a>&nbsp;=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset<span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#var$__connections">__connections</a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
 <li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
-<li><div class="src-line"><a name="a166"></a><span class="src-sym">}&nbsp;</span><span class="src-comm">//&nbsp;end&nbsp;of&nbsp;AObject</span></div></li>
-<li><div class="src-line"><a name="a167"></a><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a167"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a168"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Clears&nbsp;all&nbsp;data&nbsp;in&nbsp;the&nbsp;object&nbsp;and&nbsp;attempts&nbsp;to&nbsp;remove&nbsp;all&nbsp;references&nbsp;to&nbsp;itself.</span></div></li>
+<li><div class="src-line"><a name="a169"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Note&nbsp;that&nbsp;this&nbsp;object&nbsp;should&nbsp;not&nbsp;be&nbsp;used&nbsp;at&nbsp;this&nbsp;point,&nbsp;but&nbsp;should&nbsp;be&nbsp;unset.</span></div></li>
+<li><div class="src-line"><a name="a170"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../Alia/Core/AObject.html#methodclear">clear</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a172"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodclearConnections">clearConnections</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset<span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#var$__connections">__connections</a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a174"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset<span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#var$__objectID">__objectID</a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a175"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unset<span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#var$__signalDefinitions">__signalDefinitions</a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a176"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../Alia/Core/AObjectRegistry.html">AObjectRegistry</a></span><span class="src-sym">::</span><a href="../Alia/Core/AObjectRegistry.html#methodinstance">instance</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">-&gt;</span><span class="src-id">clearObject</span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a177"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a178"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a179"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><a href="../Alia/Core/AObject.html#method__destruct">__destruct</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a180"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodclear">clear</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a181"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">&quot;object&nbsp;dead!&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a182"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a183"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a184"></a><span class="src-sym">}&nbsp;</span><span class="src-comm">//&nbsp;end&nbsp;of&nbsp;AObject</span></div></li>
+<li><div class="src-line"><a name="a185"></a><span class="src-php">?&gt;</span></div></li>
 </ol></div>
 </div>
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 03 Sep 2008 15:05:53 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+		Documentation generated on Thu, 04 Sep 2008 12:12:55 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</body>
 </html>

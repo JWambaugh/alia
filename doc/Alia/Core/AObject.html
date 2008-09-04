@@ -157,10 +157,16 @@
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
-																																																																																								<div class="method-definition">
+																																																																																																								<div class="method-definition">
 					<img src="../../media/images/Constructor.png" alt=" "/>
 											<span class="method-result">AObject</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Destructor.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
 										()
 									</div>
 																<div class="method-definition">
@@ -168,6 +174,12 @@
 											<span class="method-result">void</span>
 										<a href="#addConnection" title="details" class="method-name">addConnection</a>
 											(<span class="var-type"><a href="../../Alia/Core/AConnection.html">AConnection</a></span>&nbsp;<span class="var-name">$connection</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
 									</div>
 																<div class="method-definition">
 					<img src="../../media/images/Method.png" alt=" "/>
@@ -231,7 +243,7 @@
 		<div class="info-box-body">
 			
 <a name="var$__connections" id="$__connections"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<img src="../../media/images/PrivateVariable.png" />
@@ -254,7 +266,7 @@
 
 </div>
 <a name="var$__objectID" id="$__objectID"><!-- --></A>
-<div class="evenrow">
+<div class="oddrow">
 
 	<div class="var-header">
 		<img src="../../media/images/PrivateVariable.png" />
@@ -277,7 +289,7 @@
 
 </div>
 <a name="var$__signalDefinitions" id="$__signalDefinitions"><!-- --></A>
-<div class="oddrow">
+<div class="evenrow">
 
 	<div class="var-header">
 		<img src="../../media/images/PrivateVariable.png" />
@@ -316,7 +328,7 @@
 		<div class="info-box-body">
 			<A NAME='method_detail'></A>
 <a name="method__construct" id="__construct"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Constructor.png" />
@@ -405,6 +417,34 @@
 							</li>
 				</ul>
 	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Destructor.png" />
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a179">179</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Alia/Widgets/AWidget.html#method__destruct">AWidget::__destruct()</a>
+							</li>
+				</ul>
+	</div>
 <a name="methodaddConnection" id="addConnection"><!-- --></a>
 <div class="oddrow">
 	
@@ -435,8 +475,46 @@
 		
 			
 	</div>
-<a name="methodclearConnections" id="clearConnections"><!-- --></a>
+<a name="methodclear" id="clear"><!-- --></a>
 <div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">clear</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a171">171</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clears all data in the object and attempts to remove all references to itself.</p>
+<p class="description"><p>Note that this object should not be used at this point, but should be unset.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Alia/Core/ALayout.html#methodclear">ALayout::clear()</a>
+								: Clears all data in the object and attempts to remove all references to itself.
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AWidget.html#methodclear">AWidget::clear()</a>
+								: prepares the object to be unset
+							</li>
+				</ul>
+	</div>
+<a name="methodclearConnections" id="clearConnections"><!-- --></a>
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
@@ -460,7 +538,7 @@
 			
 	</div>
 <a name="methoddefineSignal" id="defineSignal"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
@@ -494,7 +572,7 @@
 			
 	</div>
 <a name="methodemit" id="emit"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
@@ -528,7 +606,7 @@
 			
 	</div>
 <a name="methodgetObjectID" id="getObjectID"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
@@ -552,7 +630,7 @@
 			
 	</div>
 <a name="methodhasConnection" id="hasConnection"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
@@ -586,7 +664,7 @@
 			
 	</div>
 <a name="methodsetObjectID" id="setObjectID"><!-- --></a>
-<div class="oddrow">
+<div class="evenrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/Method.png" />
@@ -618,6 +696,7 @@
 		<ul class="redefinitions">
 					<li>
 				<a href="../../Alia/Widgets/AWidget.html#methodsetObjectID">AWidget::setObjectID()</a>
+								: Sets the object's ID
 							</li>
 					<li>
 				<a href="../../Alia/Widgets/AWidgetDecorator.html#methodsetObjectID">AWidgetDecorator::setObjectID()</a>
@@ -625,7 +704,7 @@
 				</ul>
 	</div>
 <a name="method__hasSignalDefinition" id="__hasSignalDefinition"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
 		<img src="../../media/images/PrivateMethod.png" />
@@ -660,7 +739,7 @@
 
 	
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 03 Sep 2008 15:05:53 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+		Documentation generated on Thu, 04 Sep 2008 12:12:55 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
 	</p>
 	</div></body>
 </html>
