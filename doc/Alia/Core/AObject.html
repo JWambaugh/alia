@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class AObject</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/AbstractClass_logo.png"
+														alt="Abstract Class"
+														title="Abstract Class"
+														style="vertical-align: middle"> AObject</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">class AObject - The base class for all objects with signal/slot functionality</p>
+<p class="description"><p>The AObject class is the base class for all widgets, and any other objects with signal/slot functionality.  If you want to create your own object that will emit signals, it must extend AObject, or one of its subclasses.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jordan Wambaugh &lt;<a href="mailto:jordan@wambaugh.org">jordan@wambaugh.org</a>&gt;</li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">usedby:</span> <a href="../../Alia/Validator/AValidator.html">AValidator</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_lib---AObject.php.html">/lib/AObject.php</a> (line <span class="field"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a27">27</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Alia/Core/ALayout.html">ALayout</a>
+					</td>
+					<td>
+											ALayout
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Alia/Core/ATimer.html">ATimer</a>
+					</td>
+					<td>
+											Alia Javascript timer
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../Alia/Validator/AValidator.html">AValidator</a>
+					</td>
+					<td>
+											Provides easy validation of html forms and other data.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../../Alia/Widgets/AWidget.html">AWidget</a>
+					</td>
+					<td>
+											AWidget - The base class for all wi
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																								<div class="var-title">
+					<img src="../../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type"><a href="../../Alia/Core/AConnection.html">AConnection</a></span>
+					<a href="#$__connections" title="details" class="var-name">$__connections</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$__objectID" title="details" class="var-name">$__objectID</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$__signalDefinitions" title="details" class="var-name">$__signalDefinitions</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																								<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">AObject</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#addConnection" title="details" class="method-name">addConnection</a>
+											(<span class="var-type"><a href="../../Alia/Core/AConnection.html">AConnection</a></span>&nbsp;<span class="var-name">$connection</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#clearConnections" title="details" class="method-name">clearConnections</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#defineSignal" title="details" class="method-name">defineSignal</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$parameterCount</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">null</span>
+										<a href="#emit" title="details" class="method-name">emit</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$signalName</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$args</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#getObjectID" title="details" class="method-name">getObjectID</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#hasConnection" title="details" class="method-name">hasConnection</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$signal</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$signalName</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#setObjectID" title="details" class="method-name">setObjectID</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/PrivateMethod.png" alt=" "/>
+											<span class="method-result">bool</span>
+										<a href="#__hasSignalDefinition" title="details" class="method-name">__hasSignalDefinition</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$__connections" id="$__connections"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../../Alia/Core/AConnection.html">AConnection</a></span>
+			<span class="var-name">$__connections</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a44">44</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An array containing all connections to this object</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$__objectID" id="$__objectID"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$__objectID</span>
+						(line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The unique ID of the object. This value is assigned by AObjectRegistry</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$__signalDefinitions" id="$__signalDefinitions"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$__signalDefinitions</span>
+			 = <span class="var-default">array()</span>			(line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a37">37</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">an array containing all signal deffinitions</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a55">55</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">AObject</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Alia/Core/ALayout.html#method__construct">ALayout::__construct()</a>
+								: __construct
+							</li>
+					<li>
+				<a href="../../Alia/Layouts/AHTMLLayout.html#method__construct">AHTMLLayout::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Core/ATimer.html#method__construct">ATimer::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Validator/AValidator.html#method__construct">AValidator::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AWidget.html#method__construct">AWidget::__construct()</a>
+								: * Methods **
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AWidgetDecorator.html#method__construct">AWidgetDecorator::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ADraggableWidget.html#method__construct">ADraggableWidget::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ACalendar.html#method__construct">ACalendar::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AEditableText.html#method__construct">AEditableText::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AHTMLElement.html#method__construct">AHTMLElement::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AImage.html#method__construct">AImage::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ALineEdit.html#method__construct">ALineEdit::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AParagraph.html#method__construct">AParagraph::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/APushButton.html#method__construct">APushButton::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ATableCell.html#method__construct">ATableCell::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ATextEdit.html#method__construct">ATextEdit::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AWindow.html#method__construct">AWindow::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AHTMLText.html#method__construct">AHTMLText::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ALoginWidget.html#method__construct">ALoginWidget::__construct()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/ASortableList.html#method__construct">ASortableList::__construct()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodaddConnection" id="addConnection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">addConnection</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a124">124</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a slot connection</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addConnection
+		</span>
+					(<span class="var-type"><a href="../../Alia/Core/AConnection.html">AConnection</a></span>&nbsp;<span class="var-name">$connection</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../../Alia/Core/AConnection.html">AConnection</a></span>
+				<span class="var-name">$connection</span><span class="var-description">: The connection to add</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclearConnections" id="clearConnections"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">clearConnections</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a162">162</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clearConnections
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddefineSignal" id="defineSignal"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">defineSignal</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a84">84</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Defines a signal that other objects my connect slots to.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jordan Wambaugh &lt;<a href="mailto:jordan@wambaugh.org">jordan@wambaugh.org</a>&gt;</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			defineSignal
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$parameterCount</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: name</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$parameterCount</span><span class="var-description">: parameterCount</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodemit" id="emit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">emit</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a98">98</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">emit() - Emits a signal from this object to all connected slots</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jordan Wambaugh &lt;<a href="mailto:jordan@wambaugh.org">jordan@wambaugh.org</a>&gt;</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">null</span>
+		<span class="method-name">
+			emit
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$signalName</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$args</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$signalName</span><span class="var-description">: The name of the signal to emit</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$args</span><span class="var-description">: the arguments to send with the signal</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetObjectID" id="getObjectID"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getObjectID</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a65">65</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getObjectID
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhasConnection" id="hasConnection"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">hasConnection</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a139">139</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns true if there is a connection to a signal specified by $signalName</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True if there is a connection to the signal $signal</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			hasConnection
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$signal</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$signalName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$signalName</span><span class="var-description">: The name of the signal to search for</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$signal</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetObjectID" id="setObjectID"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">setObjectID</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a72">72</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setObjectID
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$id</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../Alia/Widgets/AWidget.html#methodsetObjectID">AWidget::setObjectID()</a>
+							</li>
+					<li>
+				<a href="../../Alia/Widgets/AWidgetDecorator.html#methodsetObjectID">AWidgetDecorator::setObjectID()</a>
+							</li>
+				</ul>
+	</div>
+<a name="method__hasSignalDefinition" id="__hasSignalDefinition"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/PrivateMethod.png" />
+		<span class="method-title">__hasSignalDefinition</span> (line <span class="line-number"><a href="../../__filesource/fsource_Alia_Core_libAObject.php.html#a153">153</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">return:</span> True if the signal is defined in the object</li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			__hasSignalDefinition
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 03 Sep 2008 15:05:53 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

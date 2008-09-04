@@ -1,0 +1,87 @@
+      <refentry id="{@id}">
+       <refnamediv>
+        <refname>Alia</refname>
+        <refpurpose>The PHP Widget Toolkit</refpurpose>
+          
+       </refnamediv>
+       <refsynopsisdiv>
+        <author>
+         Jordan CM Wambaugh
+         <authorblurb>
+          {@link mailto:jordan@wambaugh.org Jordan CM Wambaugh}
+         </authorblurb>
+        </author>
+       </refsynopsisdiv>
+       {@toc}
+       <refsect1 id="{@id intro}">
+        <title>Introduction</title>
+        <para>For more information on alia, submit a bug, or get the latest copy, see the {@link http://sourceforge.net/projects/alia source forge project page}</para>
+        <para>
+         Welcome to the wonderful world of Alia. Alia is An open-source library for PHP that will revolutionize the way you build web sites. Alia blurs the line between server-side code and client-side code, allowing the author to build complete web applications with one simple, object-oriented interface.
+        </para>
+       </refsect1>
+      <refsect1 id="{@id requirements}">
+        <title>Requirements</title>
+        <para>
+        Alia requires PHP version 5.1 or higher. It comes shipped with everything else it needs. (currently, the only third party requirement is the prototype javascript library, which is currently included in the source).</para>
+       </refsect1>
+	<refsect1 id="{@id installation}">
+        <title>Installation</title>
+        
+        <orderedlist>
+        <title>Install Alia</title>
+       
+       <listitem> 
+        <para>
+       check out the library into any location you choose. It is best to not put the library itself into your document root. This is for security reasons.
+       </para>
+       </listitem>
+       <listitem>
+       <para>create a file in your document root called 'front.php' that contains the following code:
+       
+       <programlisting role="php">
+    <![CDATA[
+       <?php
+include '/path/to/alia/lib/Alia.php';
+Alia::loadFront();
+?>
+]]>
+	</programlisting>
+	</para>
+	<para>
+    This is required by Alia for ajax functionality.  
+	</para>
+      
+       </listitem>
+       
+       <listitem>
+       <para>Set up your application:</para>
+       </listitem>
+        <programlisting role="php">
+    <![CDATA[
+<?php
+//include the Alia library
+require_once '/path/to/alia/lib/Alia.php';
+
+//start the session (required by Alia)
+session_start();
+
+//create a simple button
+$button = new APushButton('hello world!');
+
+//set our button as the main widget
+Alia::setMainWidget($button);
+
+//start the application!
+Alia::run();
+?>
+]]>
+	</programlisting>
+	<para>Be sure to enter the correct path to lib/Alia.php on line 3.</para>
+	<para>The above example creates just a simple button that does nothing, but illustrates how to set up a simple Alia application.</para>
+       </orderedlist>
+        
+       </refsect1>
+
+      </refentry>
+

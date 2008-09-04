@@ -1,0 +1,64 @@
+      <refentry id="{@id}">
+       <refnamediv>
+        <refname>Signals And Slots</refname>
+        
+          
+       </refnamediv>
+       <refsynopsisdiv>
+        <author>
+         Jordan CM Wambaugh
+         <authorblurb>
+          {@link mailto:jordan@wambaugh.org Jordan CM Wambaugh}
+         </authorblurb>
+        </author>
+       </refsynopsisdiv>
+       {@toc}
+       <refsect1 id="{@id Introduction}">
+        <title>Introduction</title>
+        <para>Alia's signals and slots are an implementation of the Observer Design Pattern.
+	The signals and slots mechanism allows objects to be notified of events in other objects, without the observed object having to know anything about the observing objects.
+	This allows objects to communicate with each other, without any tight coupling.</para>
+	<para>
+		A SIGNAL is EMITTED from an object whenever a specific event occurs within the object. Other objects may CONNECT to that specific SIGNAL if they wish.
+		When an object connects to a signal of another object, it must specify a SLOT method for the emitted signal to be sent to.
+		This slot method will be called each time the signal it is connected to is emitted.
+	</para>
+       
+        <para>An example of the signals and slots mechanism can be found in the simple ALoginWidget widget. (ALoginWidget is a simple widget that allows a user to enter a user name an a password)
+	If I am writing a program and I want to use the ALoginWidget in my program, I need to know when the user fills out the form and hits the submit button, so that my application can log them into the system.
+	ALoginWidget <em>emits</em> a <em>signal</em> called 'loginPushed' when the user clicks the submit button. All my application has to do, is <em>connect</em> a <em>slot</em> to the 'loginPushed' signal.
+	
+       </para>
+	 <programlisting role="php">
+ <![CDATA[
+ class testWidget extends AWidget {
+	function __construct(){
+		parent::__construct();
+		//set up our simple layout
+		$layout = new ASimpleLayout($this);
+		$this->setLayout($layout);
+		
+		//create our login widget
+		$loginWidget = new ALoginWidget();
+		
+		//add our login widget to the layout
+		$layout->addWidget($loginWidget);
+		
+		//Connect the 'loginPushed' signal to our loginUser slot
+		//now whenever the user clicks the login button, out loginUser method will be called,
+		//and passed the login information (The loginUser signal sends the login info when emitted)
+		Alia::connect($loginWidget,'loginPushed',$this,'loginUser');
+	}
+	
+	//just send a simple alert box with the username and password
+	function loginUser($user,$password){
+		Alia::sendJScript(AJScript::alert("$user logged in with password $password"));
+	}
+}
+]]>
+</programlisting>
+
+        
+       </refsect1>
+       
+      </refentry>

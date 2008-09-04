@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for AElementLayout.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file AElementLayout.php</h1>
+<p>Documentation is available at <a href="../Alia/_lib---layouts---AElementLayout.php.html">AElementLayout.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a>&lt;?</div></li>
+<li><div class="src-line"><a name="a2"></a>/**</div></li>
+<li><div class="src-line"><a name="a3"></a>&nbsp;*&nbsp;AElementLayout</div></li>
+<li><div class="src-line"><a name="a4"></a>&nbsp;*</div></li>
+<li><div class="src-line"><a name="a5"></a>&nbsp;*&nbsp;@package&nbsp;Alia</div></li>
+<li><div class="src-line"><a name="a6"></a>&nbsp;*&nbsp;@subpackage&nbsp;Layouts</div></li>
+<li><div class="src-line"><a name="a7"></a>&nbsp;*/</div></li>
+<li><div class="src-line"><a name="a8"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a9"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a10"></a>/**</div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;*&nbsp;AElementLayout</div></li>
+<li><div class="src-line"><a name="a12"></a>&nbsp;*</div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;*&nbsp;A&nbsp;very&nbsp;simple&nbsp;layout&nbsp;for&nbsp;widgets&nbsp;that&nbsp;represent&nbsp;a&nbsp;single&nbsp;element</div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;*</div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;*&nbsp;@package&nbsp;Alia</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;*&nbsp;@subpackage&nbsp;Layouts</div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;*</div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;*/</div></li>
+<li><div class="src-line"><a name="a19"></a>class&nbsp;AElementLayout&nbsp;extends&nbsp;ALayout</div></li>
+<li><div class="src-line"><a name="a20"></a>{</div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;render(){</div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$widget=$this-&gt;getMainWidget();</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$buffer=&nbsp;&quot;&lt;&quot;.$widget-&gt;getTagName().&quot;&nbsp;&quot;.$this-&gt;getAttributeHTML();</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$buffer.=&nbsp;($html=$widget-&gt;getInnerHTML())&nbsp;?&nbsp;&quot;&gt;$html&lt;/&quot;.$widget-&gt;getTagName().&quot;&gt;&quot;&nbsp;:&nbsp;&quot;&nbsp;/&gt;&quot;;</div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$buffer;</div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;addWidget(AWidget&nbsp;$widget){</div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!$widget&nbsp;instanceof&nbsp;AHTMLElement&nbsp;){</div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;Exception(&quot;widget&nbsp;is&nbsp;not&nbsp;of&nbsp;type&nbsp;AHTMLWidget!&quot;);</div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;__widgets=$widget;</div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a36"></a>}&nbsp;//&nbsp;end&nbsp;of&nbsp;ASimpleLayout</div></li>
+<li><div class="src-line"><a name="a37"></a>?&gt;</div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 19 Mar 2008 10:38:48 -0400 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>

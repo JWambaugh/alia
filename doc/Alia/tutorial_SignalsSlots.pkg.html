@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Signals And Slots</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+	<table class="tutorial-nav-box">
+	<tr>
+		<td style="width: 30%">
+							<a href="../Alia/tutorial_Alia.pkg.html"><img src="../media/images/previous_button.png" alt="Previous"></a>
+					</td>
+		<td style="text-align: center">
+					</td>
+		<td style="text-align: right; width: 30%">
+							<a href="../Alia/tutorial_Widgets.pkg.html"><img src="../media/images/next_button.png" alt="Next"></a>
+					</td>
+	</tr>
+	<tr>
+		<td style="width: 30%">
+							<span class="detail">Alia</span>
+					</td>
+		<td style="text-align: center">
+					</td>
+		<td style="text-align: right; width: 30%">
+							<span class="detail">Widgets</span>
+					</td>
+	</tr>
+</table>
+	
+<div><a name=""></a><div class="ref-title-box"><h1 class="ref-title">Signals And Slots</h1></div>
+       <div class="ref-synopsis"><span class="author">Jordan CM Wambaugh
+         <div class="author-blurb"><a href="mailto:jordan@wambaugh.org">Jordan CM Wambaugh</a></div></span></div>
+       <h1 class="title">Table of Contents</h1>
+<ul class="toc">
+	
+			
+					<li><a href="../Alia/tutorial_SignalsSlots.pkg.html#Introduction">Introduction</a></li>
+					</ul>
+
+       <span><a name="Introduction"></a><h2 class="title">Introduction</h2><p>Alia's signals and slots are an implementation of the Observer Design Pattern.
+	The signals and slots mechanism allows objects to be notified of events in other objects, without the observed object having to know anything about the observing objects.
+	This allows objects to communicate with each other, without any tight coupling.</p>
+	<p>A SIGNAL is EMITTED from an object whenever a specific event occurs within the object. Other objects may CONNECT to that specific SIGNAL if they wish.
+		When an object connects to a signal of another object, it must specify a SLOT method for the emitted signal to be sent to.
+		This slot method will be called each time the signal it is connected to is emitted.</p>
+       
+        <p>An example of the signals and slots mechanism can be found in the simple ALoginWidget widget. (ALoginWidget is a simple widget that allows a user to enter a user name an a password)
+	If I am writing a program and I want to use the ALoginWidget in my program, I need to know when the user fills out the form and hits the submit button, so that my application can log them into the system.
+	ALoginWidget emits a signal called 'loginPushed' when the user clicks the submit button. All my application has to do, is connect a slot to the 'loginPushed' signal.</p>
+	 <div class="src-code"><ol><li><div class="src-line"><span class="src-key">class&nbsp;</span><span class="src-id">testWidget&nbsp;</span><span class="src-key">extends&nbsp;</span><a href="../Alia/Widgets/AWidget.html">AWidget</a>&nbsp;<span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><span class="src-id">__construct</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">parent</span><span class="src-sym">::</span><span class="src-id">__construct</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//set&nbsp;up&nbsp;our&nbsp;simple&nbsp;layout</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$layout&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../Alia/Layouts/ASimpleLayout.html">ASimpleLayout</a></span><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><span class="src-id">setLayout</span><span class="src-sym">(</span><span class="src-var">$layout</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//create&nbsp;our&nbsp;login&nbsp;widget</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$loginWidget&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id"><a href="../Alia/Widgets/ALoginWidget.html">ALoginWidget</a></span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//add&nbsp;our&nbsp;login&nbsp;widget&nbsp;to&nbsp;the&nbsp;layout</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$layout</span><span class="src-sym">-&gt;</span><span class="src-id">addWidget</span><span class="src-sym">(</span><span class="src-var">$loginWidget</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//Connect&nbsp;the&nbsp;'loginPushed'&nbsp;signal&nbsp;to&nbsp;our&nbsp;loginUser&nbsp;slot</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//now&nbsp;whenever&nbsp;the&nbsp;user&nbsp;clicks&nbsp;the&nbsp;login&nbsp;button,&nbsp;out&nbsp;loginUser&nbsp;method&nbsp;will&nbsp;be&nbsp;called,</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//and&nbsp;passed&nbsp;the&nbsp;login&nbsp;information&nbsp;(The&nbsp;loginUser&nbsp;signal&nbsp;sends&nbsp;the&nbsp;login&nbsp;info&nbsp;when&nbsp;emitted)</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../Alia/Core/Alia.html">Alia</a></span><span class="src-sym">::</span><a href="../Alia/Core/Alia.html#methodconnect">connect</a><span class="src-sym">(</span><span class="src-var">$loginWidget</span><span class="src-sym">,</span><span class="src-str">'loginPushed'</span><span class="src-sym">,</span><span class="src-var">$this</span><span class="src-sym">,</span><span class="src-str">'loginUser'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//just&nbsp;send&nbsp;a&nbsp;simple&nbsp;alert&nbsp;box&nbsp;with&nbsp;the&nbsp;username&nbsp;and&nbsp;password</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">function&nbsp;</span><span class="src-id">loginUser</span><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">,</span><span class="src-var">$password</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../Alia/Core/Alia.html">Alia</a></span><span class="src-sym">::</span><a href="../Alia/Core/Alia.html#methodsendJScript">sendJScript</a><span class="src-sym">(</span><span class="src-id"><a href="../Alia/Core/AJScript.html">AJScript</a></span><span class="src-sym">::</span><a href="../Alia/Core/AJScript.html#methodalert">alert</a><span class="src-sym">(</span><span class="src-str">&quot;</span><span class="src-str"><span class="src-var">$user</span>&nbsp;logged&nbsp;in&nbsp;with&nbsp;password&nbsp;<span class="src-var">$password</span></span><span class="src-str">&quot;</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><span class="src-sym">}</span></div></li>
+</ol></div></span></div>
+
+	<table class="tutorial-nav-box">
+	<tr>
+		<td style="width: 30%">
+							<a href="../Alia/tutorial_Alia.pkg.html"><img src="../media/images/previous_button.png" alt="Previous"></a>
+					</td>
+		<td style="text-align: center">
+					</td>
+		<td style="text-align: right; width: 30%">
+							<a href="../Alia/tutorial_Widgets.pkg.html"><img src="../media/images/next_button.png" alt="Next"></a>
+					</td>
+	</tr>
+	<tr>
+		<td style="width: 30%">
+							<span class="detail">Alia</span>
+					</td>
+		<td style="text-align: center">
+					</td>
+		<td style="text-align: right; width: 30%">
+							<span class="detail">Widgets</span>
+					</td>
+	</tr>
+</table>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 03 Sep 2008 15:05:49 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,24 @@
+      <refentry id="{@id}">
+       <refnamediv>
+        <refname>Widgets</refname>
+        
+          
+       </refnamediv>
+       <refsynopsisdiv>
+        <author>
+         Jordan CM Wambaugh
+         <authorblurb>
+          {@link mailto:jordan@wambaugh.org Jordan CM Wambaugh}
+         </authorblurb>
+        </author>
+       </refsynopsisdiv>
+       {@toc}
+       <refsect1 id="{@id whatsawidget}">
+        <title>What is a widget?</title>
+        <para>A widget is a single reusable object-oriented user-interface element.</para>
+         <para>Widgets can, and often do, consist of many widgets. For example, APushButton is a widget - a button, and ALineEdit is also a wiget - a text entry field. 
+         ALoginWidget is a single widget that has a username and password field (ALineEdit widgets), and a submit button (a APushButtonWidget).</para>
+        
+       </refsect1>
+       
+      </refentry>

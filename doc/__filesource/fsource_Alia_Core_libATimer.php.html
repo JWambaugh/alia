@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for ATimer.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file ATimer.php</h1>
+<p>Documentation is available at <a href="../Alia/Core/_lib---ATimer.php.html">ATimer.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;ATimer.php</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*&nbsp;File&nbsp;for&nbsp;ATimer&nbsp;class&nbsp;-&nbsp;the&nbsp;Alia&nbsp;Javascript&nbsp;Timer</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;Jordan&nbsp;CM&nbsp;Wambaugh&nbsp;&lt;jordan@wambaugh.org&gt;</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;Alia</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a10"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;*&nbsp;Alia&nbsp;Javascript&nbsp;timer</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;*&nbsp;ATimer&nbsp;is&nbsp;a&nbsp;javascript&nbsp;timer&nbsp;for&nbsp;Alia&nbsp;applications.</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*&nbsp;If&nbsp;the&nbsp;timer&nbsp;is&nbsp;set&nbsp;to&nbsp;singleshot,&nbsp;the&nbsp;timer&nbsp;will&nbsp;run&nbsp;once,&nbsp;and&nbsp;once&nbsp;$interval&nbsp;has&nbsp;passed,&nbsp;the&nbsp;timeout&nbsp;signal&nbsp;will&nbsp;be&nbsp;emitted.</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*&nbsp;If&nbsp;the&nbsp;timer's&nbsp;singleshot&nbsp;is&nbsp;set&nbsp;to&nbsp;false,&nbsp;the&nbsp;timer&nbsp;will&nbsp;continue&nbsp;to&nbsp;run&nbsp;every&nbsp;$interval&nbsp;milliseconds.</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-doc">&nbsp;*&nbsp;Note&nbsp;that&nbsp;this&nbsp;is&nbsp;a&nbsp;javascript&nbsp;timer:&nbsp;the&nbsp;timer&nbsp;will&nbsp;not&nbsp;actually&nbsp;start&nbsp;until&nbsp;the&nbsp;data&nbsp;is&nbsp;sent&nbsp;back&nbsp;to&nbsp;the&nbsp;client.</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;Jordan&nbsp;CM&nbsp;Wambaugh&nbsp;&lt;jordan@wambaugh.org&gt;</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;Alia</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-tag">@signal</span><span class="src-doc">&nbsp;timeout&nbsp;Emitted&nbsp;every&nbsp;time&nbsp;the&nbsp;timer&nbsp;times&nbsp;out&nbsp;(every&nbsp;interval)</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-key">class&nbsp;</span><a href="../Alia/Core/ATimer.html">ATimer</a>&nbsp;<span class="src-key">extends&nbsp;</span><a href="../Alia/Core/AObject.html">AObject</a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Milliseconds&nbsp;till&nbsp;timeout&nbsp;is&nbsp;emitted</span></div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@var&nbsp;</span><span class="src-doc-type">int&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@see</span><span class="src-doc">&nbsp;setInterval()</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><a href="../Alia/Core/ATimer.html#var$interval">$interval</a><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Whether&nbsp;the&nbsp;timer&nbsp;is&nbsp;singleshot&nbsp;or&nbsp;not.</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;singleshot&nbsp;timers&nbsp;only&nbsp;run&nbsp;once.</span></div></li>
+<li><div class="src-line"><a name="a36"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;If&nbsp;this&nbsp;is&nbsp;set&nbsp;to&nbsp;false,&nbsp;the&nbsp;timer&nbsp;will&nbsp;continue&nbsp;to&nbsp;emit&nbsp;the&nbsp;timeout&nbsp;signal&nbsp;continuosly&nbsp;every&nbsp;$interval&nbsp;number&nbsp;of&nbsp;milliseconds.</span></div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@var&nbsp;</span><span class="src-doc-type">bool&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><a href="../Alia/Core/ATimer.html#var$singleshot">$singleshot</a>&nbsp;=&nbsp;<span class="src-id">false</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Whether&nbsp;the&nbsp;timer&nbsp;is&nbsp;currently&nbsp;running</span></div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@var&nbsp;</span><span class="src-doc-type">bool&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">private&nbsp;</span><a href="../Alia/Core/ATimer.html#var$active">$active</a>=<span class="src-id">false</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public&nbsp;</span><span class="src-key">function&nbsp;</span><a href="../Alia/Core/ATimer.html#method__construct">__construct</a><span class="src-sym">(</span><span class="src-var">$interval</span>=<span class="src-id">null</span><span class="src-sym">,</span><span class="src-var">$singleshot&nbsp;</span>=&nbsp;<span class="src-id">false</span><span class="src-sym">)</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">parent</span><span class="src-sym">::</span><a href="../Alia/Core/AObject.html#method__construct">__construct</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methoddefineSignal">defineSignal</a><span class="src-sym">(</span><span class="src-str">'timeout'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#methodsetInterval">setInterval</a><span class="src-sym">(&nbsp;</span><span class="src-var">$interval</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#methodsetSingleShot">setSingleShot</a><span class="src-sym">(</span><span class="src-var">$singleshot</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-comm">//define&nbsp;our&nbsp;timer&nbsp;variable&nbsp;in&nbsp;javascript</span></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../Alia/Core/Alia.html">Alia</a></span><span class="src-sym">::</span><a href="../Alia/Core/Alia.html#methodsendJScript">sendJScript</a><span class="src-sym">(</span><span class="src-str">'var&nbsp;'</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodgetObjectID">getObjectID</a><span class="src-sym">(</span><span class="src-sym">)</span>.<span class="src-str">&quot;Timer&nbsp;=&nbsp;new&nbsp;function(){this.timer&nbsp;=&nbsp;null;this.singleshot=&quot;</span>.<span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$singleshot">singleshot</a>==<span class="src-id">true</span>?<span class="src-str">'true'</span>:<span class="src-str">'false'</span><span class="src-sym">)</span>.<span class="src-str">&quot;;}&quot;&nbsp;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id"><a href="../Alia/Core/Alia.html">Alia</a></span><span class="src-sym">::</span><a href="../Alia/Core/Alia.html#methodconnect">connect</a><span class="src-sym">(</span><span class="src-var">$this</span><span class="src-sym">,</span><span class="src-str">'timeout'</span><span class="src-sym">,</span><span class="src-id">null</span><span class="src-sym">,</span><span class="src-id">null</span><span class="src-sym">,</span><span class="src-str">'if('</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodgetObjectID">getObjectID</a><span class="src-sym">(</span><span class="src-sym">)</span>.<span class="src-str">'Timer.singleshot==false){'</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodgetObjectID">getObjectID</a><span class="src-sym">(</span><span class="src-sym">)</span>.<span class="src-str">&quot;Timer.timer&nbsp;=&nbsp;setTimeout(\&quot;&quot;</span>.<span class="src-id"><a href="../Alia/Core/AJScript.html">AJScript</a></span><span class="src-sym">::</span><a href="../Alia/Core/AJScript.html#methodemit">emit</a><span class="src-sym">(</span><span class="src-str">'timeout'</span><span class="src-sym">,</span><span class="src-var">$this</span><span class="src-sym">)</span>.<span class="src-str">&quot;</span><span class="src-str">\&quot;,{<span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$interval">interval</a><span class="src-sym">}</span>);}</span><span class="src-str"><span class="src-str">"</span><span class="src-sym">)</span><span class="src-sym">;</span></span></div></li>
+<li><div class="src-line"><a name="a60"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a61"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a62"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a63"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a64"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;/**</span></div></li>
+<li><div class="src-line"><a name="a65"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;sets&nbsp;the&nbsp;intervals&nbsp;between&nbsp;timeouts&nbsp;(in&nbsp;milliseconds)</span></div></li>
+<li><div class="src-line"><a name="a66"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a67"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;unknown_type&nbsp;$interval</span></div></li>
+<li><div class="src-line"><a name="a68"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@see&nbsp;$interval</span></div></li>
+<li><div class="src-line"><a name="a69"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a70"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public</span>&nbsp;<span class="src-key">function</span>&nbsp;<span class="src-id">setInterval</span><span class="src-sym">(</span><span class="src-var">$interval</span><span class="src-sym">)</span><span class="src-sym">{</span></span></div></li>
+<li><div class="src-line"><a name="a71"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$interval">interval</a>&nbsp;=&nbsp;<span class="src-var">$interval</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="src-str"><span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a73"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a74"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;/**</span></div></li>
+<li><div class="src-line"><a name="a75"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Sets&nbsp;whether&nbsp;the&nbsp;timer&nbsp;should&nbsp;repeat&nbsp;or&nbsp;just&nbsp;run&nbsp;once.</span></div></li>
+<li><div class="src-line"><a name="a76"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a77"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;bool&nbsp;$val&nbsp;true&nbsp;if&nbsp;only&nbsp;runs&nbsp;once,&nbsp;false&nbsp;to&nbsp;run&nbsp;repeatedly</span></div></li>
+<li><div class="src-line"><a name="a78"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a79"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public</span>&nbsp;<span class="src-key">function</span>&nbsp;<span class="src-id">setSingleShot</span><span class="src-sym">(</span><span class="src-var">$val</span><span class="src-sym">)</span><span class="src-sym">{</span></span></div></li>
+<li><div class="src-line"><a name="a80"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$singleshot">singleshot</a>&nbsp;=&nbsp;(bool)<span class="src-var">$val</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="src-str"><span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a82"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a83"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;/**</span></div></li>
+<li><div class="src-line"><a name="a84"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;stops&nbsp;the&nbsp;timer</span></div></li>
+<li><div class="src-line"><a name="a85"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a86"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a87"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public</span>&nbsp;<span class="src-key">function</span>&nbsp;<span class="src-id">stop</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></span></div></li>
+<li><div class="src-line"><a name="a88"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$active">active</a>&nbsp;==&nbsp;<span class="src-id">false</span><span class="src-sym">)</span><span class="src-str"></span><span class="src-sym">{</span></span></div></li>
+<li><div class="src-line"><a name="a89"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return</span>&nbsp;<span class="src-sym">;</span></span></div></li>
+<li><div class="src-line"><a name="a90"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a91"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$active">active</a>=<span class="src-id">false</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a92"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">Alia</span><span class="src-sym">::</span><span class="src-id">sendJScript</span><span class="src-sym">(</span><span class="src-str">'clearTimeout('</span>.<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodgetObjectID">getObjectID</a><span class="src-sym">(</span><span class="src-sym">)</span>.<span class="src-str">&quot;Timer.timer);&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a93"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="src-str"><span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a94"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a95"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;/**</span></div></li>
+<li><div class="src-line"><a name="a96"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Starts&nbsp;the&nbsp;timer</span></div></li>
+<li><div class="src-line"><a name="a97"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a98"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a99"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">public</span>&nbsp;<span class="src-key">function</span>&nbsp;<span class="src-id">start</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">{</span></span></div></li>
+<li><div class="src-line"><a name="a100"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$interval">interval</a>==<span class="src-id">null</span><span class="src-sym">)</span><span class="src-str"></span><span class="src-sym">{</span></span></div></li>
+<li><div class="src-line"><a name="a101"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;<span class="src-key">new</span>&nbsp;<span class="src-id">Exception</span><span class="src-sym">(</span><span class="src-str">&quot;Cannot&nbsp;start&nbsp;timer&nbsp;with&nbsp;null&nbsp;or&nbsp;0&nbsp;interval.&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></span></div></li>
+<li><div class="src-line"><a name="a102"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a103"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-id">Alia</span><span class="src-sym">::</span><span class="src-id">sendJScript</span><span class="src-sym">(</span><span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/AObject.html#methodgetObjectID">getObjectID</a><span class="src-sym">(</span><span class="src-sym">)</span>.<span class="src-str">&quot;Timer.timer&nbsp;=&nbsp;setTimeout(\&quot;&quot;</span>.<span class="src-id">AJScript</span><span class="src-sym">::</span><span class="src-id">emit</span><span class="src-sym">(</span><span class="src-str">'timeout'</span><span class="src-sym">,</span><span class="src-var">$this</span><span class="src-sym">)</span>.</span><span class="src-str"><span class="src-str">"</span>\&quot;,</span>{<span class="src-var">$this</span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$interval">interval</a><span class="src-sym">}</span>);</span><span class="src-str"><span class="src-str">"</span><span class="src-sym">)</span><span class="src-sym">;</span></span></div></li>
+<li><div class="src-line"><a name="a104"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$this</span></span><span class="src-sym">-&gt;</span><a href="../Alia/Core/ATimer.html#var$active">active</a>=<span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="src-str"><span class="src-sym">}</span></span></div></li>
+<li><div class="src-line"><a name="a106"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a107"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a108"></a></span><span class="src-str">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 03 Sep 2008 15:05:55 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</body>
+</html>

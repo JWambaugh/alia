@@ -1,0 +1,177 @@
+#!/usr/local/bin/php
+<?php
+error_reporting(E_ALL);
+
+if(count($argv)<2){
+	echo "\nNot enough parameters.\n";
+	help();
+	return 1;
+}
+
+for($x=1;$x<count($argv);$x++){
+	$arg=$argv[$x];
+	if($arg == '-d'){
+		define ('DOCTRINE_PATH',$argv[++$x]);
+		continue;
+	}
+	if($arg == '-c'){
+		define ('CRUD_CLASS',$argv[++$x]);
+		continue;
+	}
+
+	if($arg == '-w'){
+		define ('CRUD_WIDGET',$argv[++$x]);
+		continue;
+	}
+
+	if($arg == '-l'){
+		define('LAYOUT_GENERATOR', $argv[++$x]);
+		continue;
+	}
+
+	if($arg == '-g'){
+		define('WIDGET_GENERATOR', $argv[++$x]);
+		continue;
+	}
+
+	if($arg == '-i'){
+		showGenerators();
+		die;
+	}
+
+	else{
+		define('CRUD_FILE',$arg);
+		if(!defined('CRUD_CLASS')){
+			$class=explode('.',basename($arg));
+			$class=$class[0];
+			define('CRUD_CLASS',$class);
+		}
+	}
+
+}
+
+if(!defined('CRUD_FILE')){
+	help();
+	exit(1);
+}
+if(!defined('CRUD_WDIGET')){
+	define('CRUD_WIDGET',CRUD_CLASS.'Widget');
+}
+
+
+if(!defined('WIDGET_GENERATOR')){
+	define('WIDGET_GENERATOR','DefaultWidget');
+}
+if(!file_exists(DOCTRINE_PATH.'/lib/Doctrine.php')){
+	echo "Doctrine.php not found in".DOCTRINE_PATH.'/lib';
+	return 1;
+}
+spl_autoload_register("crudifyAutoloader");
+require_once(DOCTRINE_PATH.'/lib/Doctrine.php');
+spl_autoload_register(array('Doctrine', 'autoload'));
+Doctrine_Manager::connection('mysql://root:elizabeth@localhost/ihaveskill');
+if(!file_exists(CRUD_FILE)){
+	echo "File ".CRUD_FILE.'not found or is not readable.';
+	return 1;
+}
+
+require CRUD_FILE;
+$c=CRUD_CLASS;
+$r=new $c();
+$t=$r->getTable();
+$columns=$t->getColumns();
+
+//build the widget
+require_once(dirname(__FILE__)."/WidgetGenerator.php");
+require_once(dirname(__FILE__)."/widgets/".WIDGET_GENERATOR.".php");
+$class = WIDGET_GENERATOR;
+$widgetGen = new $class();
+$buffer=$widgetGen->generate($columns);
+
+
+
+if(!file_put_contents(CRUD_WIDGET.".php",$buffer)){
+	echo "\n Error writing to file". CRUD_OUTPUT;
+}
+
+
+//build the template
+if(!is_dir("./templates"))mkdir("./templates");
+require_once(dirname(__FILE__)."/LayoutGenerator.php");
+$class = defined('LAYOUT_GENERATOR') ? LAYOUT_GENERATOR : "DefaultLayout";
+require_once(dirname(__FILE__)."/layouts/$class.php");
+$layoutGen = new $class();
+$buffer=$layoutGen->generate($columns);
+if(!file_put_contents('./templates/'.CRUD_WIDGET."Edit.tpl",$buffer)){
+	echo "\n Error writing to file/templates/".CRUD_WIDGET."Edit.tpl";
+}
+
+
+
+/**
+ * returns the index for the primary key column 
+ * 
+ * @param mixed $array 
+ * @access public
+ * @return void
+ */
+function getPrimaryKey($array){
+	foreach((array)$array as $k=>$val){
+		if(isset($val['primary']) && $val['primary']==true){
+			return $k;
+		}
+	}
+	return false;
+}
+
+function help(){
+echo "USAGE: crudify -d [PATH_TO_DOCTRINE] {options} RECORD_FILE_NAME\n
+
+OPTIONS:
+	-c [className]	the name of the class to crudify
+	-d [path]	the path to the doctrine lib directory
+	-w [name]	the name of the widget to create
+	-i 		display a list of templates available
+
+
+";
+}
+
+
+
+function showGenerators(){
+	$widgets = scandir(dirname(__FILE__)."/widgets");
+	$layouts = scandir(dirname(__FILE__)."/layouts");
+	echo "\nInstalled Widget Tempates: ";
+	foreach($widgets as $widget){
+		if(preg_match("/\.php$/", $widget) !=false){
+			echo "\n\t".str_replace('.php', '', $widget);
+		}
+	}
+	
+	echo "\n\nInstalled Layout Tempates: ";
+	foreach($layouts as $layout){
+		if(preg_match("/\.php$/", $layout) !=false){
+			echo "\n\t".str_replace('.php', '', $layout);
+		}
+	}
+	echo "\n\n";
+}
+
+
+
+
+
+
+
+function crudifyAutoLoader($className){
+	if(file_exists(dirname(CRUD_FILE)."/generated/Base".basename(CRUD_FILE))){
+		require_once(dirname(CRUD_FILE)."/generated/Base".basename(CRUD_FILE));
+		return true;
+	}
+}
+
+
+
+
+

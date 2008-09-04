@@ -1,0 +1,55 @@
+#!/usr/local/bin/php
+<?php
+
+
+if(count($argv)==1){
+    help();
+    die;
+}
+
+array_shift($argv);
+
+$args = implode(' ', $argv);
+foreach($argv as $arg){
+    if(!preg_match('/^-/',$arg)){
+        $dirname = $arg;
+    }
+    
+}
+
+
+if(!is_dir($dirname)){
+    echo "directory with name $dirname does not exist!";
+    die;
+}
+
+$args = str_replace($dirname, '', $args);
+
+$files = scandir($dirname);
+
+foreach($files as $file){
+    if(!is_dir($file)){
+        if(preg_match('/\.php$/',$file)){
+            echo `crudify $args $dirname/$file`;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+function help(){
+    echo "
+    
+    Runs crudify on all scripts in the specified directory.
+    Syntax is exactly the same as crudify:
+    ";
+    
+    echo `crudify`;
+}
+
