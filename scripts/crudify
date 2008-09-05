@@ -83,7 +83,7 @@ $columns=$t->getColumns();
 $columnNames=$t->getColumnNames();
 $x=0;
 foreach($columns as $key=>$column){
-	$columns[$x++]['name'] = $columnNames[$x];	
+	$columns[$key]['name'] = $columnNames[$x++];	
 }
 var_dump($columnNames);
 //build the widget
