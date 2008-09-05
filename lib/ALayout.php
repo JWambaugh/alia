@@ -118,7 +118,10 @@ abstract class ALayout extends AObject implements ARenderableInterface
 		$this->__widgets = array();
 	}
 
-
+	/**
+	 * Sets the widgets in the layout
+	 * @param array $widgets An array of widgets
+	 */
 	public function setWidgets($widgets){
 		if(!is_array($widgets)){
 			throw new Exception('setWidgets method only accepts an array as a parameter.');
