@@ -8,7 +8,7 @@ class TableWidget extends WidgetGenerator{
 
 	public function generate($columns){
 	//generate the record widget
-	$path = dirname(__FILE__)."/../crudify.php -d ".DOCTRINE_PATH. " -g DefaultWidget -l TableRowLayout -w ".CRUD_CLASS."RecordRow ".CRUD_FILE;
+	$path = dirname(__FILE__)."/../crudify -d ".DOCTRINE_PATH. " -g DefaultWidget -l TableRowLayout -w ".CRUD_CLASS."RecordRow ".CRUD_FILE;
 	echo $path;
 	echo `$path`;
 	$buffer='<?php

@@ -7,6 +7,7 @@ class TableWidgetLayout extends LayoutGenerator{
 		$buffer="<table {%attributes%} >\n<tr>";
 		
 		foreach($columns as $column=>$vals){
+			$column=$vals['name'];
 			$buffer.='<th>'.$column."</th>\n";
 		}
 		$buffer.="<tr>\n";
