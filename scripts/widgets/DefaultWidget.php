@@ -105,7 +105,8 @@ class '.CRUD_WIDGET.' extends AWidget{
 		$x=0;
 ';
 		
-foreach($columns as $column=>$vals){
+foreach($columns as $vals){
+	$column=$vals['name'];
 	$buffer.="\n\n".'		//'."The '$column' widget";
 	switch($vals['type']){
 		case 'integer':
@@ -152,7 +153,8 @@ $buffer.='
 		//emit a saveClicked signal when the user hits save. The signal passes all form information to all slots.
 		Alia::connect($button,"clicked", null, null, "" . AJScript::emit("saveClicked",$this,array(';
 	$x=0;
-	foreach($columns as $column=>$vals){
+	foreach($columns as $vals){
+	$column = $vals['name'];
 	if($x++)$buffer.=',';
 $buffer.="\n\t\t\t".'AJScript::formElementValue($this->getLayout()->getWidget("'.$column.'"))';
 }
@@ -172,7 +174,8 @@ $buffer.=')));
 	 */
 	function save(';
 	$x=0;
-foreach($columns as $column=>$vals){
+foreach($columns as $vals){
+	$column = $vals['name'];
 	if($x++)$buffer.=',';
 	$buffer.='$'.$column;
 }
@@ -185,7 +188,8 @@ $buffer.='){
 		}
 		if($this->record){
 			';
-foreach($columns as $column=>$vals){
+foreach($columns as $vals){
+	$column = $vals['name'];
 	switch($vals['type']){
 		case 'integer':
 			$buffer.="\n".'			$this->record->'.$column.'=(int)$'.$column.';';
