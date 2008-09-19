@@ -183,7 +183,6 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	}
 	
 	public function __destruct(){
-		  $this->clear();
 	}
 	
 

@@ -177,7 +177,6 @@ abstract class AObject
 	}
 	
 	function __destruct(){
-		  $this->clear();
 	}
 	
 } // end of AObject

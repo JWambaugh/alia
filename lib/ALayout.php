@@ -133,7 +133,8 @@ abstract class ALayout extends AObject implements ARenderableInterface
 	/**
 	 * Clears all data in the object and attempts to remove all references to itself.
 	 * Note that this object should not be used at this point, but should be unset.
-	 */	public function clear(){
+	 */
+	public function clear(){
 		$this->clearWidgets();
 		unset($this->widget);
 		parent::clear();
