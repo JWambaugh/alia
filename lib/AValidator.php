@@ -63,8 +63,10 @@ class AValidator extends AObject{
 					break;
 				}
 			}
-			if(!$found && !($options & self::IGNORE_MISSING_KEYS)){
-				throw new Exception("No rule found for key '$k' in provided array.");
+			if(!$found){
+				if(!($options & self::IGNORE_MISSING_KEYS)){
+					throw new Exception("No rule found for key '$k' in provided array.");
+				}
 			}else{
 				$ret=$found->validate($v);
 				if(is_object($ret)){
