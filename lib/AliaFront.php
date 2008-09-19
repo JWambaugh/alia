@@ -8,9 +8,9 @@ if(isset($_GET['jscript'])&&count($_GET['jscript'])){
 	}
 	exit;
 }
-error_reporting(0);
-Alia::startSessionOnce();
+//error_reporting(0);
 
+Alia::startSessionOnce();
 if(isset($_REQUEST['triggeredConnections']) && is_array($_REQUEST['triggeredConnections']))
 foreach ($_REQUEST['triggeredConnections'] as $conn){
 	$params = explode('-|-',$conn);
