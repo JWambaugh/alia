@@ -181,7 +181,7 @@ foreach($columns as $vals){
 }
 $buffer.='){
 		$args = func_get_args();
-		$result=$this->validator->validate($args);
+		$result=$this->validator->validate($args,AValidator::IGNORE_MISSING_KEYS);
 		if(is_array($result)){
 			$this->emit("saveFail", $result);
 			return false;
