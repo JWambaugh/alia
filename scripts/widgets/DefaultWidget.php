@@ -48,7 +48,7 @@ class '.CRUD_WIDGET.' extends AWidget{
 
 	function __construct($_record=null){
 		
-		$this->defineSignal("saveSucess");
+		$this->defineSignal("saveSuccess");
 		$this->defineSignal("saveFail",1);
 
 		if(!$_record){
