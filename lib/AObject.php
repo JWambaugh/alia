@@ -34,20 +34,20 @@ abstract class AObject
 	 * @var array
 	 * 
 	 */
-	private $__signalDefinitions=array();
+	protected $__signalDefinitions=array();
 
 	/**
 	 * An array containing all connections to this object
 	 * @var AConnection
 	 * @access private
 	 */
-	private $__connections=array();
+	protected $__connections=array();
 
 	/**
 	 * The unique ID of the object. This value is assigned by AObjectRegistry
 	 * @access private
 	 */
-	private $__objectID;
+	protected $__objectID;
 
 	/*
 	 * adds the object to the object registry. All subclasses must call this.
