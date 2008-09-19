@@ -94,6 +94,7 @@ class Alia{
 	public static function loadFront(){
 		ALoader::instance()->includeFile('AliaFront.php');
 	}
+
 	
 	/**
 	 * Sends javascript to the output buffer.

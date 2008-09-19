@@ -68,7 +68,8 @@ class ALoader {
 	 * @param string $fileName
 	 */
 	public function includeFile($fileName){
-		require ($this->getFilePath($fileName));
+		$path=$this->getFilePath($fileName);
+		require $path;
 		return ;
 	}
 
