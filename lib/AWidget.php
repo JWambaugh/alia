@@ -36,7 +36,7 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	 */
 	private $__attributes=array();
 	
-	
+	private $__display=true;	
 	
 	/*** Methods ***/
 	
@@ -72,6 +72,9 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	 * @return string The rendered HTML
 	 */
 	public function render( ){
+		if(!$this->__display){
+			return " ";
+		}
 		if($this->__layout){
 			return $this->__layout->render();
 		}else{
@@ -163,8 +166,14 @@ abstract class AWidget extends AObject implements ARenderableInterface
 	  * Call this function to update a widget's display via ajax.
 	  */
 	public function redraw(){
-		$script =AJScript::updateDiv($this->getAttribute('id'),$this->render());
-		AJScriptBuffer::instance()->addJScript("Validator.clear();\n".$script,true);
+//		if($this->__display){
+			$script =AJScript::updateDiv($this->getAttribute('id'),$this->render());
+			AJScriptBuffer::instance()->addJScript("Validator.clear();\n".$script,true);
+//		}
+	}
+
+	public function setDisplay($val){
+		$this->__display=$val;
 	}
 
 	 /**

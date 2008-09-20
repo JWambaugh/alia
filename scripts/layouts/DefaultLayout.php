@@ -8,7 +8,7 @@ class DefaultLayout extends LayoutGenerator{
 			$column = $vals['name'];
 			$buffer.=$column.' {'.$column."}\n<br>\n";
 		}
-		$buffer.="{_saveButton}\n</div>";
+		$buffer.="{_saveButton}\n{_deleteButton}</div>";
 		return $buffer;
 	}
 	

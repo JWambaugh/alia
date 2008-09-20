@@ -131,6 +131,13 @@ $buffer.='
 		//add a save button
 		$saveButton = new APushButton("Save");
 		$layout->addWidget($saveButton,"_saveButton");
+		
+		//add a delete button
+		$deleteButton = new APushButton("Delete");
+		$layout->addWidget($deleteButton,"_deleteButton");
+
+
+
 	}
 	
 
@@ -157,11 +164,22 @@ $buffer.=')));
 		
 		//connect the save() method to the saveClicked signal
 		Alia::connect($this,"saveClicked",$this,"save");
+
+		$deleteButton=$this->getLayout()->getWidget("_deleteButton");
+		Alia::connect($deleteButton,"clicked",$this,"delete");
 		
 	}
 
 
- 
+	function delete(){
+		if($this->record){
+			$this->record->delete();
+			$this->setDisplay(false);
+			$this->reDraw();
+		}
+	}
+
+
 	/**
 	 * Saves the record to the database
 	 *

@@ -9,7 +9,7 @@ class TableRowLayout extends LayoutGenerator{
 		$column=$vals['name'];
 			$buffer.='<td>{'.$column."}</td>\n";
 		}
-		$buffer.="<td>{_saveButton}</td>\n</tr>";
+		$buffer.="<td>{_saveButton}</td>\n<td>{_deleteButton}</td></tr>";
 		return $buffer;
 	}
 	
