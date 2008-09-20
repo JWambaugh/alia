@@ -61,7 +61,7 @@ class AConnection
 	const JSCRIPT_CONNECTION = "1";
 	
 	
-	public function __construct($target,$method,AObject $source,$signal,$script=null){
+	public function __construct($target,$method,$source,$signal,$script=null){
 		if($target!==null){
 			$this->setTarget($target,$method);
 		}

@@ -116,6 +116,13 @@ class AObjectRegistry
 			}
 		}
 	}
+
+	public function clearAllObjects(){
+		foreach ($this->objects as $k=>$o){
+			unset($this->objects[$k]);	
+		}
+	
+	}
 	
 } // end of AObjectRegistry
 ?>

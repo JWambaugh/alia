@@ -83,7 +83,14 @@ class AJScript{
 		if($connection->getJavascript()){
 			$script='function(params){'.$connection->getJavascript().'}';
 		}
-		$buffer.="\n".'Alia.addConnection(new AConnection("'.$connection->getSource()->getObjectID().'", "'.$connection->getSignalName().'", "'.$target.'", "'.$connection->getSlotMethod().'","'.$connection->getConnectionID().'",'.$script.'));';
+
+		if($connection->getSource()==="*"){
+			$sourceId='*';
+		} else {
+			$sourceId=$connection->getSource()->getObjectID();
+		}
+
+		$buffer.="\n".'Alia.addConnection(new AConnection("'.$sourceId.'", "'.$connection->getSignalName().'", "'.$target.'", "'.$connection->getSlotMethod().'","'.$connection->getConnectionID().'",'.$script.'));';
 		return $buffer;
 	}
 	

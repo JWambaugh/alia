@@ -26,10 +26,6 @@ class TableWidget extends WidgetGenerator{
 class '.CRUD_WIDGET.' extends AWidget{
 	const recordClass=\''.CRUD_CLASS.'\';
 	
-
-	
-
-
 	private $records;
 	private $page;
 	private $recordsPerPage = 15;
@@ -42,8 +38,6 @@ class '.CRUD_WIDGET.' extends AWidget{
 		$this->setpage($page);
 		$this->fetchRecords();
 		$this->buildLayout();
-
-
 	}
 	
 
@@ -83,8 +77,7 @@ class '.CRUD_WIDGET.' extends AWidget{
 		if($this->getLayout()){
 			$widgets = $this->getLayout()->getWidgets();
 			foreach($widgets as $k=>$widget){
-				$widget->clearConnections();
-				//AObjectRegistry::instance()->unsetObject($widgets[$k]);
+				$widget->clear();
 				unset($widgets[$k]);
 			}
 			$layout = $this->getLayout();
@@ -104,6 +97,11 @@ class '.CRUD_WIDGET.' extends AWidget{
 		$button = new APushButton("Next >>");
 		$layout->addWidget($button,"nextButton");
 		Alia::connect($button,"clicked",$this,"nextPage");
+
+		$button = new APushButton("Add");
+		$layout->addWidget($button,"addButton");
+		Alia::connect($button,"clicked",$this,"addRow");
+
 
 
 	}
@@ -126,7 +124,11 @@ class '.CRUD_WIDGET.' extends AWidget{
 		$this->redraw();
 	}
 
-
+	public function addRow(){
+		$this->records[] = new '.CRUD_CLASS.'();
+		$this->buildLayout();
+		$this->redraw();
+	}
 
 
 }

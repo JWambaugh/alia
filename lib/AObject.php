@@ -111,8 +111,9 @@ abstract class AObject
 				if($connection->getJavascript()!=null){
 					Alia::sendJScript($connection->getJavascript());
 				}
-			   }
-		  }
+			}
+		}
+		AConnectionRegistry::instance()->globalEmit($signalName,$args);
 	} // end of member function emit
 
 

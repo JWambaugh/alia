@@ -88,11 +88,6 @@ class '.CRUD_WIDGET.' extends AWidget{
 		}
 	}
 	
-	function __sleep(){
-		return array("validator","primaryKey");
-	}
-	
-	
 	/**
 	 * builds the layout and widgets that go in it. 
 	 * 

@@ -24,6 +24,8 @@ class AConnectionRegistry
 	 * @var ArrayObject
 	 */
 	public $connections;
+
+	public $globalConnections=array();
 	
 	static private $instanceObject=null;
 	
@@ -52,7 +54,11 @@ class AConnectionRegistry
 	
 	public function addConnection(AConnection $connection){
 		$this->generateID($connection);
-		$this->connections[]=$connection;
+		if($connection->getSource()=="*"){
+			$this->globalConnections[]=$connection;
+		}else{
+			$this->connections[]=$connection;
+		}
 		Alia::sendJScript(AJScript::renderConnection($connection));
 	}
 	
@@ -97,6 +103,29 @@ class AConnectionRegistry
 		}
 	}
 
+	public function getGlobalConnections($signal){
+		$retVal=array();
+		foreach($this->globalConnections as $k=>$v){
+			if($v->getSignalName() == $signal){
+				$retVal[] = $v;
+			}
+		}
+		return $retVal;
+	}
+
+	public function globalEmit($signal, $args){
+		$connections=$this->getGlobalConnections($signal);
+			foreach($connections as $connection){
+				//if we have a slot method in the connection, execute it. 
+				if($connection->getSlotMethod()!=null){
+					call_user_func_array(array(&$connection->targetObject,$connection->getSlotMethod()),$args);
+				}
+				//if there is javascript in the connection, send javascript to client
+				if($connection->getJavascript()!=null){
+				Alia::sendJScript($connection->getJavascript());
+			}
+		}
+	}
 
 
 } // end of AObjectRegistry

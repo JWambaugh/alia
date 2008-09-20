@@ -18,6 +18,7 @@ class TableWidgetLayout extends LayoutGenerator{
 		<tr>
 		<td>{prevButton}</td>
 		<td>{nextButton}</td>
+		<td>{addButton}</td>
 		</tr>
 		</table>';
 

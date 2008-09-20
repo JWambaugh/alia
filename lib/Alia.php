@@ -41,10 +41,12 @@ class Alia{
 	 * @return null
 	 * @access public
 	 */
-	public static function connect(AObject $source,  $signal, $target,  $slotMethod ,$jscript=null) {
+	public static function connect($source,  $signal, $target,  $slotMethod ,$jscript=null) {
 		$connection =new AConnection($target,$slotMethod,$source,$signal,$jscript);
 		AConnectionRegistry::instance()->addConnection($connection);
-		$source->addConnection($connection);
+		if($source !=="*"){
+			$source->addConnection($connection);
+		}
 	} // end of member function connect
 
 	
@@ -129,12 +131,18 @@ class Alia{
 	 * @access public
 	 * @return void
 	 */
-	public function startSessionOnce(){
+	public static  function startSessionOnce(){
 		if(!session_id()){
 			session_start();
 		}
 	}
 
+
+	public static function clear(){
+		self::startSessionOnce();
+		AObjectRegistry::instance()->clearAllObjects();
+		$_SESSION['alia']=null;
+	}
 }
 
 ?>
